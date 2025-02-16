@@ -1,1 +1,218 @@
-# Caca
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REXFLIX</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fond noir */
+            color: white; /* Texte en blanc pour contraster avec le fond noir */
+        }
+
+        /* Catégories - Ajouter la couleur rouge et alignement à gauche */
+        .category h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: red; /* Catégories en rouge */
+            text-align: left; /* Alignement à gauche */
+        }
+
+        /* Container du menu */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        /* Logo à gauche */
+        .logo {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Menu central */
+        .menu {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #ff0000; /* Change la couleur au survol */
+        }
+
+        /* Partie droite */
+        .right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Image principale juste en dessous du menu */
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover; /* L'image remplira bien l'espace */
+        }
+
+        /* Style des catégories */
+        .category {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .category h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: red;
+            text-align: left; /* Alignement à gauche */
+        }
+
+        /* Grille de cartes pour le défilement horizontal */
+        .category .grid {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto; /* Permet le défilement horizontal */
+            padding: 10px;
+            scroll-snap-type: x mandatory; /* Pour un défilement fluide */
+        }
+
+        /* Cartes rectangulaires pour les séries */
+        .category .serie {
+            width: 350px; /* Largeur plus grande pour les fonds d'écran */
+            height: 200px; /* Hauteur plus basse pour des affiches rectangulaires */
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        .category .card {
+            width: 185px; /* Taille des affiches */
+            height: 278px; /* Taille des affiches */
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            scroll-snap-align: start; /* Alignement des éléments au défilement */
+        }
+
+        .category .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Style de la section PREMIUM */
+        .premium-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">REXFLIX</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Films</a>
+            <a href="#">SÉRIES</a>
+            <a href="#">My List</a>
+        </div>
+        <div class="right">
+            <!-- Boutons simples sans images -->
+        </div>
+    </div>
+
+    <!-- Image principale -->
+    <img src="https://image.tmdb.org/t/p/original/4D0EUup8HHm2A1TR6wQolBKFl0f.jpg" alt="Film Promotionnel" class="main-image">
+
+    <!-- FILMS EN TENDANCE -->
+    <div class="category">
+        <h2>FILMS EN TENDANCE</h2>
+        <div class="grid">
+            <!-- 5 affiches de films avec défilement -->
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w1280/gERwLGTa6JGN4qXjkip13eDaxy1.jpg" alt="Film 1">
+            </div>
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w1280/wDRXmiAEJdhNIcuetM4016fOCx8.jpg" alt="Film 2">
+            </div>
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w1280/6akNNv4KyrguZUiG4uemfV6toVq.jpg" alt="Film 3">
+            </div>
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w1280/bn4qZZO5nSN48D5pXVypf4MF2wg.jpg" alt="Film 4">
+            </div>
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w1280/5FBjYhj7EQ85wniVpuYmxg6RJQs.jpg" alt="Film 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Autres catégories (non modifiées) -->
+    <!-- SÉRIES EN TENDANCE -->
+    <div class="category">
+        <h2>SÉRIES EN TENDANCE</h2>
+        <div class="grid">
+            <!-- 4 affiches rectangulaires (fonds d'écran) -->
+            <div class="serie">
+                <img src="https://image.tmdb.org/t/p/w1280/8zyJGTxegBYVdehFYwUrY0hLU7x.jpg" alt="Série 1">
+            </div>
+            <div class="serie">
+                <img src="https://image.tmdb.org/t/p/w1280/8zyJGTxegBYVdehFYwUrY0hLU7x.jpg" alt="Série 2">
+            </div>
+            <div class="serie">
+                <img src="https://image.tmdb.org/t/p/w1280/5hq8MmiYkQbk8b9SY3ZIF8beocM.jpg" alt="Série 3">
+            </div>
+            <div class="serie">
+                <img src="https://image.tmdb.org/t/p/w1280/nYvb5Rwn3EnVzp2tjpUSuXxJeMf.jpg" alt="Série 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="category">
+        <h2>PREMIUM</h2>
+        <div class="grid">
+            <!-- 1 affiche premium -->
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/original/4D0EUup8HHm2A1TR6wQolBKFl0f.jpg" alt="Premium 1">
+                <div class="premium-message">Accédez au contenu PREMIUM en vous abonnant !</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Autres catégories comme ANIMATION, HORREUR, AVENTURE, PROCHAINEMENT restent inchangées -->
+
+</body>
+</html>
